@@ -7,6 +7,22 @@ Advanced data pipeline orchestration platform with workflow management and monit
 
 This project demonstrates professional TypeScript development skills with modern best practices, clean code architecture, and industry-standard implementations.
 
+```mermaid
+flowchart LR
+    A[Pipeline Config\nYAML / JSON\nTask Definitions] --> B[Task Scheduling\nQueue Management\nDependency Graph]
+    B --> C[Data Extraction\nSources / APIs\nFile Readers]
+    C --> D[Transformation\nETL Processing\nData Validation]
+    D --> E[Loading\nOutput Sinks\nDatabase / Files]
+    E --> F[Monitoring\nLogs / Metrics\nError Alerts]
+
+    style A fill:#3178C6,color:#fff
+    style B fill:#F7DF1E,color:#000
+    style C fill:#3178C6,color:#fff
+    style D fill:#007ACC,color:#fff
+    style E fill:#235A97,color:#fff
+    style F fill:#107C10,color:#fff
+```
+
 ### 🛠️ Technology Stack
 TypeScript, data pipelines, ETL, workflow orchestration, data engineering
 

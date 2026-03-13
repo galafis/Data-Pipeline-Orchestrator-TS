@@ -1,166 +1,129 @@
-# Data-Pipeline-Orchestrator-TS
+# Data Pipeline Orchestrator
 
-<div align="center">
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6.svg?logo=typescript&logoColor=white)](https://typescriptlang.org)
+[![Node.js](https://img.shields.io/badge/Node.js-20+-339933.svg?logo=node.js&logoColor=white)](https://nodejs.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg?logo=docker)](Dockerfile)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED.svg?logo=docker&logoColor=white)](Dockerfile)
 
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+[English](#english) | [Portugues (BR)](#portugues-br)
 
-</div>
-
+---
 
 ## English
 
-### 🚀 Overview
-Advanced data pipeline orchestration platform with workflow management and monitoring
+### Overview
 
-This project demonstrates professional TypeScript development skills with modern best practices, clean code architecture, and industry-standard implementations.
+Data Pipeline Orchestrator built with TypeScript for scheduling, executing, and monitoring ETL workflows. Supports configurable batch processing, retry logic, and statistical analysis across multiple data sources with built-in insight generation and recommendation engines.
+
+### Architecture
 
 ```mermaid
-flowchart LR
-    A[Pipeline Config\nYAML / JSON\nTask Definitions] --> B[Task Scheduling\nQueue Management\nDependency Graph]
-    B --> C[Data Extraction\nSources / APIs\nFile Readers]
-    C --> D[Transformation\nETL Processing\nData Validation]
-    D --> E[Loading\nOutput Sinks\nDatabase / Files]
-    E --> F[Monitoring\nLogs / Metrics\nError Alerts]
-
-    style A fill:#3178C6,color:#fff
-    style B fill:#F7DF1E,color:#000
-    style C fill:#3178C6,color:#fff
-    style D fill:#007ACC,color:#fff
-    style E fill:#235A97,color:#fff
-    style F fill:#107C10,color:#fff
+graph TB
+    subgraph Orchestrator["Pipeline Orchestrator"]
+        A[Scheduler]
+        B[Pipeline Engine]
+    end
+    subgraph Processing["Processing"]
+        C[Data Loader]
+        D[Transformer]
+        E[Analyzer]
+    end
+    subgraph Output["Output"]
+        F[Results Export]
+        G[Insights Report]
+    end
+    A --> B --> C --> D --> E
+    E --> F
+    E --> G
+    style Orchestrator fill:#e3f2fd
+    style Processing fill:#e8f5e9
+    style Output fill:#f3e5f5
 ```
 
-### 🛠️ Technology Stack
-TypeScript, data pipelines, ETL, workflow orchestration, data engineering
+### Key Features
 
-### ⚡ Features
-- Professional code architecture
-- Modern development practices
-- Comprehensive error handling
-- Performance optimized
-- Well-documented codebase
-- Industry-standard patterns
+- **Pipeline Orchestration** -- Schedule and manage multi-stage data processing workflows
+- **Batch Processing** -- Configurable batch sizes for large-scale data ingestion
+- **Statistical Analysis** -- Real-time summary statistics and anomaly detection
+- **Insight Generation** -- Automated pattern recognition and actionable recommendations
+- **Retry Logic** -- Configurable retry attempts with exponential backoff
+- **Data Export** -- Structured output with metadata for downstream consumption
 
-### 🏃‍♂️ Quick Start
+### Industry Application
+
+This orchestrator addresses data engineering challenges in enterprise ETL systems, real-time analytics platforms, and data lake architectures. The pipeline management patterns are used in financial data processing, IoT telemetry aggregation, and healthcare data integration workflows.
+
+### Tech Stack
+
+| Technology | Purpose |
+|------------|---------|
+| **TypeScript 5.0+** | Type-safe pipeline logic |
+| **Node.js 20+** | Runtime environment |
+| **Docker** | Containerized deployment |
+
+### Quick Start
 
 ```bash
-# Clone the repository
 git clone https://github.com/galafis/Data-Pipeline-Orchestrator-TS.git
-
-# Navigate to project directory
 cd Data-Pipeline-Orchestrator-TS
-
-# Follow language-specific setup instructions below
+npm install
+npm run dev
 ```
 
-### 📦 Installation & Setup
+### Docker
 
 ```bash
-# Install dependencies
-npm install
-
-# Build the project
-npm run build
-
-# Run the application
-npm start
+docker build -t data-pipeline-orchestrator .
+docker run -p 3000:3000 --env-file .env data-pipeline-orchestrator
 ```
 
-### 🎯 Use Cases
-- Professional development portfolio
-- Learning modern TypeScript practices
-- Code reference and examples
-- Enterprise-grade implementations
+### Testing
 
-### 📊 Project Structure
-```
-Data-Pipeline-Orchestrator-TS/
-├── README.md
-├── LICENSE
-├── main.ts
-├── package.json
-├── tsconfig.json
-├── dist/
-└── src/
+```bash
+npm test
 ```
 
-### 🤝 Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
+### License
 
-### 📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-### 👨‍💻 Author
+### Author
+
 **Gabriel Demetrios Lafis**
-- Data Scientist & Engineer
-- Systems Developer & Analyst
-- Cybersecurity Specialist
+- GitHub: [@galafis](https://github.com/galafis)
+- LinkedIn: [Gabriel Demetrios Lafis](https://linkedin.com/in/gabriel-demetrios-lafis)
 
 ---
 
-## Português
+## Portugues (BR)
 
-### 🚀 Visão Geral
-Advanced data pipeline orchestration platform with workflow management and monitoring
+### Visao Geral
 
-Este projeto demonstra habilidades profissionais de desenvolvimento em TypeScript com práticas modernas, arquitetura de código limpo e implementações padrão da indústria.
+Orquestrador de Pipeline de Dados construido com TypeScript para agendamento, execucao e monitoramento de workflows ETL. Suporta processamento em lote configuravel, logica de retentativa e analise estatistica em multiplas fontes de dados com geracao de insights e motores de recomendacao integrados.
 
-### 🛠️ Stack Tecnológica
-TypeScript, data pipelines, ETL, workflow orchestration, data engineering
+### Principais Funcionalidades
 
-### ⚡ Funcionalidades
-- Arquitetura de código profissional
-- Práticas modernas de desenvolvimento
-- Tratamento abrangente de erros
-- Otimizado para performance
-- Base de código bem documentada
-- Padrões da indústria
+- **Orquestracao de Pipelines** -- Agendar e gerenciar workflows de processamento de dados multi-estagio
+- **Processamento em Lote** -- Tamanhos de lote configuraveis para ingestao de dados em larga escala
+- **Analise Estatistica** -- Estatisticas resumidas em tempo real e deteccao de anomalias
+- **Geracao de Insights** -- Reconhecimento automatico de padroes e recomendacoes acionaveis
 
-### 🏃‍♂️ Início Rápido
+### Inicio Rapido
 
 ```bash
-# Clone o repositório
 git clone https://github.com/galafis/Data-Pipeline-Orchestrator-TS.git
-
-# Navegue para o diretório do projeto
 cd Data-Pipeline-Orchestrator-TS
-
-# Siga as instruções de configuração específicas da linguagem abaixo
-```
-
-### 📦 Instalação e Configuração
-
-```bash
-# Instale as dependências
 npm install
-
-# Construa o projeto
-npm run build
-
-# Execute a aplicação
-npm start
+npm run dev
 ```
 
-### 🎯 Casos de Uso
-- Portfólio de desenvolvimento profissional
-- Aprendizado de práticas modernas em TypeScript
-- Referência de código e exemplos
-- Implementações de nível empresarial
+### Licenca
 
-### 🤝 Contribuindo
-Contribuições são bem-vindas! Sinta-se à vontade para enviar um Pull Request.
+Este projeto esta licenciado sob a Licenca MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
-### 📄 Licença
-Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para detalhes.
+### Autor
 
-### 👨‍💻 Autor
 **Gabriel Demetrios Lafis**
-- Cientista e Engenheiro de Dados
-- Desenvolvedor e Analista de Sistemas
-- Especialista em Segurança Cibernética
-
----
-
-⭐ **Se este projeto foi útil para você, considere dar uma estrela!**
+- GitHub: [@galafis](https://github.com/galafis)
+- LinkedIn: [Gabriel Demetrios Lafis](https://linkedin.com/in/gabriel-demetrios-lafis)
